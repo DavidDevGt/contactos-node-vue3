@@ -4,21 +4,21 @@
       <button
         @click="exportData('csv')"
         type="button"
-        class="btn btn-secondary"
+        class="btn btn-success"
       >
         <i class="bi bi-file-earmark-text"></i> CSV
       </button>
       <button
         @click="exportData('json')"
         type="button"
-        class="btn btn-secondary"
+        class="btn btn-warning"
       >
         <i class="bi bi-file-earmark-binary"></i> JSON
       </button>
       <button
         @click="exportData('pdf')"
         type="button"
-        class="btn btn-secondary"
+        class="btn btn-danger"
       >
         <i class="bi bi-file-earmark-pdf"></i> PDF
       </button>
