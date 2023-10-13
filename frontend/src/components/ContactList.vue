@@ -4,16 +4,19 @@
       Cambiar a Modo {{ isDarkMode ? 'Claro' : 'Oscuro' }}
     </button>
 
+
     <div v-if="loading" class="overlay">
       <div class="loader"></div>
     </div>
+
+    
     
     <div v-else class="container py-5">
       <h1 class="text-center mb-4">Lista de Contactos</h1>
       
       <div v-if="contacts.length > 0" class="row">
-        <div v-for="contact in contacts" :key="contact.id" class="col-md-3 mb-4">
-          <div class="card">
+        <div v-for="contact in contacts" :key="contact.id" class="col-md-3 mb-4 animate__animated animate__fadeIn">
+          <div class="card animate__animated animate__hover:animate__pulse">
             <div class="card-body">
               <h5 class="card-title">{{ contact.name }}</h5>
               <p class="card-text">
@@ -33,6 +36,12 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 
+
+// Componente ContactList muestra una lista de contactos obtenidos de un servidor.
+// Propiedades: contacts, un array de objetos de contacto; error, un mensaje de error si no se pudieron obtener los contactos; y loading, un tipo booleano que indica si los contactos se están obteniendo actualmente.
+// Emite un evento toggleDarkMode y escucha cambios en el estado de isDarkMode.
+// El método fetchContacts obtiene los contactos del servidor y actualiza el array de contactos.
+// El ejemplo muestra cómo usar el componente.
 export default {
   data() {
     return {
