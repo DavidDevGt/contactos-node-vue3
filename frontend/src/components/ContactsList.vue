@@ -1,11 +1,13 @@
 <template>
   <div>
     <h1>Lista de Contactos</h1>
-    <ul>
+    <ul v-if="contacts.length > 0">
       <li v-for="contact in contacts" key="contact.id">
         {{ contact.name }} - {{ contact.phone }}
       </li>
     </ul>
+    <p v-else>No hay contactos disponibles.</p>
+    <p v-if="error">{{ error }}</p>
   </div>
 </template>
 
@@ -13,12 +15,20 @@
 export default {
   data() {
     return {
-      contacts: []
+      contacts: [],
+      error: null,
     };
   },
   async mounted() {
-    const response = await fetch("http://localhost:3000/contacts");
-    this.contacts = await response.json();
+    try {
+      const response = await fetch("http://localhost:3000/contacts");
+      if (!response.ok) {
+        throw new Error("No se pudo obtener la lista de contactos.");
+      }
+      this.contacts = await response.json();
+    } catch (error) {
+      this.error = error.message;
+    }
   },
 };
 </script>
