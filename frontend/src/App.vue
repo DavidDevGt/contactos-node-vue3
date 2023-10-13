@@ -18,6 +18,9 @@ export default {
       error: null,
     };
   },
+  mounted() {
+    this.fetchContacts();
+  },
   methods: {
     async fetchContacts() {
       try {
@@ -31,9 +34,6 @@ export default {
         this.error = error;
       }
     },
-  },
-  mounted() {
-    this.fetchContacts();
   },
 };
 </script>

@@ -1,26 +1,29 @@
 <template>
   <div class="position-fixed bottom-0 end-0 p-3">
-    <div class="btn-group" role="group">
+    <div
+      class="btn-group"
+      role="group"
+    >
       <button
-        @click="exportData('csv')"
-        type="button"
         class="btn btn-success"
+        type="button"
+        @click="exportData('csv')"
       >
-        <i class="bi bi-file-earmark-text"></i> CSV
+        <i class="bi bi-file-earmark-text" /> CSV
       </button>
       <button
-        @click="exportData('json')"
-        type="button"
         class="btn btn-warning"
+        type="button"
+        @click="exportData('json')"
       >
-        <i class="bi bi-file-earmark-binary"></i> JSON
+        <i class="bi bi-file-earmark-binary" /> JSON
       </button>
       <button
-        @click="exportData('pdf')"
-        type="button"
         class="btn btn-danger"
+        type="button"
+        @click="exportData('pdf')"
       >
-        <i class="bi bi-file-earmark-pdf"></i> PDF
+        <i class="bi bi-file-earmark-pdf" /> PDF
       </button>
     </div>
   </div>
