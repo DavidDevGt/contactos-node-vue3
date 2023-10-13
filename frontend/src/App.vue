@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ContactList from './components/ContactList.vue'
+import ContactList from './components/ContactList.vue';
 
 export default {
   components: {
